@@ -1,0 +1,28 @@
+@import "./index.css";
+
+
+.form {
+    gap: 1em;
+}
+
+.error-msg {
+    font-size: 12px;
+    color: var(--clr-invalid-theme);
+    text-align: left;
+    margin-top: -1em;
+}
+
+/* eyeIcon: Show and Hide password */
+.infoIcon {
+    display:none !important;
+}
+
+.activeIcon:hover {
+    color: var(--clr-light-blue-focus);
+    cursor: pointer;
+}
+
+.activeIcon {
+    color: var(--clr-light-grey);
+    display: block;
+}

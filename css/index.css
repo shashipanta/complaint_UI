@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500&display=swap');
+
+:root {
+    --clr-light-grey: #5C5C5C;
+    --clr-primary-blue: #54D4D4;
+    --clr-light-blue-focus: #48b9c7;
+    --ff-primary: 'Poppins', sans-serif;
+    --clr-valid-theme : green;
+    --clr-invalid-theme : red;
+
+    --clr-gradient: linear-gradient(234.06deg, #54D4D4 7.16%, #149DE1 76.12%);
+
+    --box-shadow: 0px 8px 16px 6px rgba(105, 105, 105, 0.15);
+    --gradient-blue: linear-gradient(180deg, #54D4D4 0%, #149DE1 100%);
+
+    /* temporary */
+    --fb-icon-path: url("./../fonts/icons8-facebook-50.svg");
+    --google-icon-path: url("./../fonts/icons8-google-50.svg");
+    --twitter-icon-path: url("./../fonts/icons8-twitter-50.svg");
+}
+
+
+/* remove defaults */
+*{
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--clr-light-grey); 
+}
+
+body{
+    font-family: var(--ff-primary);
+    min-height: 100vh;
+    display: grid;
+    align-items: center;
+
+}
+
+button {
+    outline: none;
+    border: none;
+}
+
+/* Form container */
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 420px;
+    gap: 2em;
+    justify-content: space-between;
+    margin-inline: auto;
+    text-align: center;
+
+    border: dashed 2px lightsalmon;
+ /* From https://css.glass */
+    /* background: rgba(90, 78, 78, 0.2); */
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);   
+    padding: 1em;
+}
+
+.form-title{
+    color: var(--clr-primary-blue);
+    font-weight: 500;
+}
+
+.single-icon{
+    height: 4em;
+    width: 4em;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+}
+
+.facebook {
+    background-image: var(--fb-icon-path);
+}
+
+.google {
+    background-image: var(--google-icon-path);
+}
+
+.twitter {
+    background-image: var(--twitter-icon-path);
+}
+
+.social-icons {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+}
+
+/* horizontal line */
+.line::after,
+.line::before{
+    content: " ";
+    display: inline-block;
+    width: 27%;
+    height: .10em;
+    margin-bottom: .2em;
+    background-color: var(--clr-light-grey);
+}
+
+.line:after{
+    margin-left: .4em;
+}
+
+.line::before{
+    margin-right: .4em;
+}
+
+input{
+    height: 3em;
+    width: 100%;
+    border: none;
+    /* padding-top: .5em; */
+}
+
+.placeholder-container {
+    display: flex;
+    align-items: center;
+    border: solid 1px #999;
+    position: relative;
+}
+
+.input-element {
+    padding: .3em 1.4em 0;
+}
+
+/* focus state for input  */
+.input-element:focus{
+    /* border: solid 2px red; */
+    outline: solid 2px var(--clr-light-blue-focus);
+}
+
+.placeholder{
+    position: absolute;
+    font-weight: 300;
+    top: .5em;
+    left: .8em;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+}
+
+.input-element:focus ~ .placeholder,
+.input-element:not(:placeholder-shown).input-element:not(:focus)
+  ~ .placeholder {
+  top: -0.8em;
+  left: 0.8em;
+  font-size: .8em;
+  background-color: white;
+  padding-inline: .5em;
+  /* color: var(--clr-light-blue-focus); */
+}
+
+/* submit buttons */
+.login-btn {
+    border: none;
+    background: linear-gradient(180deg, #54D4D4 0%, #149DE1 100%);
+    color: white;
+    border-radius: 2px;
+    width: 8em;
+    /* width: 14em;                        */
+}
+
+/* hover states */
+.btn:hover{
+    cursor: pointer;
+    color: var(--clr-light-grey);
+    background: transparent;
+    border: solid 2px var(--clr-light-grey);
+}
+
+/* links related to accounts */
+.links{
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.links a:hover{
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 320px) {
+
+    body{
+        font-size: 14px;
+    }
+
+    .single-icon{
+        width: 2em;
+        height: 2em;
+        background-size: contain;
+    }
+
+    .line::after,
+    .line::before {
+        width: 20%;
+    }
+    
+}
+
+/* for validation icons */
+.valid__icons {
+    position: absolute;
+    top: .3em;
+    right: .5em
+}
+
+.valid__theme{
+    color: green;
+    border-color: var(--clr-valid-theme);
+}
+
+.invalid__theme {
+    color: red;
+    border-color: var(--clr-invalid-theme);
+}
+
+/* eyeIcon: Show and Hide password */
+.infoIcon {
+    display:none !important;
+}
+
+.activeIcon:hover {
+    color: var(--clr-light-blue-focus);
+    cursor: pointer;
+}
+
+.activeIcon {
+    color: var(--clr-light-grey);
+    display: block;
+}
