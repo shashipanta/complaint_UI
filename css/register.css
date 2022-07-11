@@ -25,4 +25,5 @@
 .activeIcon {
     color: var(--clr-light-grey);
     display: block;
+	margin-top: .1em;
 }

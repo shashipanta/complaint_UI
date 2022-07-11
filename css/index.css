@@ -214,9 +214,9 @@ input{
 
 /* for validation icons */
 .valid__icons {
-    position: absolute;
-    top: .3em;
-    right: .5em
+	position: absolute;
+	top: .4em;
+	right: .7em;
 }
 
 .valid__theme{

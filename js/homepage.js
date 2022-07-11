@@ -10,7 +10,7 @@ let showTooltip = (e) => {
         toolTip.classList.toggle("hidden");
     } else {
         // user clicked elsewhere so remove tooltip
-        let toolTip = document.getElementById("tooltip");
+        let toolTip = document.getElementById("toolTip");
         if(!toolTip.classList.contains("hidden")) {
             toolTip.classList.toggle("hidden");
         }
@@ -38,3 +38,20 @@ let handleActiveCategory = (e) => {
 }
 
 (categoriesContainer != null) ?  categoriesContainer.addEventListener("click", handleActiveCategory):console.log("We are in homepage");
+
+
+// logout simulation
+let logOutBtn = document.getElementById("toolTip");
+let logOutAnchor = logOutBtn.firstElementChild;
+
+logOutBtn.addEventListener("click", ()=>{
+    window.location.replace("./login.html");
+})
+
+// Handle active nav menu
+let handleActiveLink = (e) => {
+    let clickedItem = e.target;
+    console.log(clickedItem);
+}
+let navContainer = document.querySelector(".nav__container");
+navContainer.addEventListener("click", handleActiveLink);

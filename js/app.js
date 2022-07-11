@@ -27,14 +27,25 @@ for(let i=0; i < eyeToggleBtns.length; i++) {
 
 // hide eyeIcon if there is no input
 let toggleEyeIcon = (e) => {
+    let eyeIcon = e.target.parentElement.lastElementChild;
+    console.log("Input length" + e.target.value.length)
+    console.log(e.target.value.length == 0 && eyeIcon.classList.contains('activeIcon'))
     if(e.target.value.length >0) {
-        let eyeIcon = e.target.parentElement.lastElementChild;
         console.log(eyeIcon);
-        eyeIcon.classList.remove('infoIcon');
-        eyeIcon.classList.add('activeIcon');
+        if(!eyeIcon.classList.contains('activeIcon')) {
+            eyeIcon.classList.remove('infoIcon');
+            eyeIcon.classList.add('activeIcon');
+        }
+    } else if(e.target.value.length == 0 && eyeIcon.classList.contains('activeIcon') ) {
+        eyeIcon.classList.remove('activeIcon');
+        eyeIcon.classList.add('infoIcon');
+
+        // change the icon visibility to default one too
+        eyeIcon.innerText = "visibility_off"
+
     }
 }
-passwordField.addEventListener("click", toggleEyeIcon);
-confirmPwdField.addEventListener("click", toggleEyeIcon);
+passwordField.addEventListener("keyup", toggleEyeIcon);
+confirmPwdField.addEventListener("keyup", toggleEyeIcon);
 
 
