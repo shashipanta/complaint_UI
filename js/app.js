@@ -45,7 +45,11 @@ let toggleEyeIcon = (e) => {
 
     }
 }
+
 passwordField.addEventListener("keyup", toggleEyeIcon);
-confirmPwdField.addEventListener("keyup", toggleEyeIcon);
+// Case login form
+if(confirmPwdField != null)
+    confirmPwdField.addEventListener("keyup", toggleEyeIcon);
+
 
 

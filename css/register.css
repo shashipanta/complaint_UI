@@ -1,20 +1,37 @@
 @import "./index.css";
 
-
 .form {
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	max-width: 420px;
     gap: 1em;
+	justify-content: space-between;
+	margin-inline: auto;
+	text-align: center;
+	border: dashed 2px lightsalmon;
+	/* background: rgba(90, 78, 78, 0.2); */
+	border-radius: 16px;
+	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.8);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	padding: 1em;
+	background: url("https://img.freepik.com/free-vector/white-background-with-blue-tech-hexagon_1017-19366.jpg?t=st=1657468092~exp=1657468692~hmac=d1679cdb58f551b0b3af8f8cdf9461a6df7f720a32fc30e646afa4690149443e&w=740");
+	background-size: contain;
 }
 
 .error-msg {
-    font-size: 12px;
-    color: var(--clr-invalid-theme);
-    text-align: left;
-    margin-top: -1em;
+	font-size: 12px;
+	color: var(--clr-invalid-theme);
+	text-align: left;
+	margin-top: -1em;
+	margin-left: 1.4em;
 }
 
 /* eyeIcon: Show and Hide password */
 .infoIcon {
-    display:none !important;
+    /* display:none !important; */
 }
 
 .activeIcon:hover {

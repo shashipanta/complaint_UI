@@ -3,6 +3,8 @@
     --clr-light-grey: #5C5C5C;
     --clr-primary-blue: #54D4D4;
     --clr-light-blue-focus: #48b9c7;
+    --clr-valid-theme : green;
+    --clr-invalid-theme : #ED3131;
 
     --ff-primary: 'Poppins', sans-serif;
 
@@ -13,6 +15,11 @@
     --gradient-blue: linear-gradient(180deg, #54D4D4 0%, #149DE1 100%);
     --default-padding: 1em 5em;
     
+
+    --clr-gradient: linear-gradient(234.06deg, #54D4D4 7.16%, #149DE1 76.12%);
+
+    --box-shadow: 0px 8px 16px 6px rgba(105, 105, 105, 0.15);
+    --gradient-blue: linear-gradient(180deg, #54D4D4 0%, #149DE1 100%);
     /* temporary */
     --fb-icon-path: url("./../fonts/icons8-facebook-50.svg");
     --google-icon-path: url("./../fonts/icons8-google-50.svg");
@@ -37,7 +44,6 @@ a{
     text-decoration: none;
 }
 
-
 a:hover {
     color: var(--clr-primary-blue);
 }
@@ -45,6 +51,7 @@ a:hover {
 .active {
     color: #149DE1;
     font-size: bold;
+    border-bottom: 3px solid #149DE1;
 }
 
 .container {
@@ -95,6 +102,10 @@ button{
 .nav__search {
     display: flex;
     gap: 2em;
+}
+
+.nav__links a:active {
+    color: black;
 }
 
 
